@@ -1,0 +1,6 @@
+subscription listenMessage {
+    messageFeed {
+        id
+        text
+    }
+}

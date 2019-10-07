@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.mary.hschat"
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+sourceSets {
+    all {
+        languageSettings {
+            useExperimentalAnnotation('kotlin.Experimental')
+        }
+    }
+}
+
+dependencies {
+    def common = rootProject.ext.commonDependencies
+    def app = rootProject.ext.appDependencies
+    def test = rootProject.ext.testDependencies
+
+    implementation common.dagger
+
+    implementation app.recyclerView
+    implementation common.kotlin
+    implementation common.appCompat
+    implementation common.ktx
+    implementation common.coroutines
+    implementation app.constraintLayout
+    implementation app.legacy
+    implementation app.lifecycle
+    implementation app.liveData
+    implementation app.navigationFragment
+    implementation app.navigationUi
+    implementation common.apollo
+
+    kapt app.lifecycleAnnotation
+    kapt common.daggerAnnotation
+
+    testImplementation test.jUnit
+    androidTestImplementation test.testRunner
+    androidTestImplementation test.espresso
+    implementation project(path: ':mvi_base')
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+if (project.hasProperty('kapt')) {
+    kapt {
+        javacOptions {
+            option("-source", "8")
+            option("-target", "8")
+        }
+    }
+}

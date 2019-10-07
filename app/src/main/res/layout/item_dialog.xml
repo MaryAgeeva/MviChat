@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/margin_small">
+
+    <TextView
+        android:id="@+id/item_dialog_avatar"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:layout_margin="@dimen/margin_medium"
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_dialog_text_bg"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/item_dialog_text_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_dialog_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_dialog_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/item_dialog_autor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_medium_large"
+        android:textColor="@color/main_text"
+        android:textStyle="bold"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:gravity="center_vertical|start"
+        app:layout_constraintTop_toTopOf="@id/item_dialog_text_bg"
+        app:layout_constraintBottom_toTopOf="@id/item_dialog_divider"
+        app:layout_constraintStart_toStartOf="@id/item_dialog_text_bg"
+        app:layout_constraintEnd_toEndOf="@id/item_dialog_text_bg"/>
+
+    <View
+        android:id="@+id/item_dialog_divider"
+        android:layout_width="@dimen/divider_dialog_length"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/item_dialog_autor"
+        app:layout_constraintStart_toStartOf="@id/item_dialog_text_bg"
+        app:layout_constraintEnd_toEndOf="@id/item_dialog_text_bg"
+        app:layout_constraintBottom_toTopOf="@id/item_dialog_text" />
+
+    <TextView
+        android:id="@+id/item_dialog_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_medium_large"
+        android:textColor="@color/main_text"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:gravity="center_vertical|start"
+        app:layout_constraintHorizontal_weight="0.7"
+        app:layout_constraintTop_toBottomOf="@id/item_dialog_divider"
+        app:layout_constraintStart_toStartOf="@id/item_dialog_text_bg"
+        app:layout_constraintEnd_toStartOf="@id/item_dialog_time"
+        app:layout_constraintBottom_toBottomOf="@id/item_dialog_text_bg"/>
+
+    <TextView
+        android:id="@+id/item_dialog_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/black"
+        android:padding="@dimen/margin_small"
+        android:gravity="center"
+        app:layout_constraintHorizontal_weight="0.3"
+        app:layout_constraintTop_toBottomOf="@id/item_dialog_divider"
+        app:layout_constraintStart_toEndOf="@id/item_dialog_text"
+        app:layout_constraintEnd_toEndOf="@id/item_dialog_text_bg"
+        app:layout_constraintBottom_toBottomOf="@id/item_dialog_text_bg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

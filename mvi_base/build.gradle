@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    def common = rootProject.ext.commonDependencies
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation common.kotlin
+    implementation common.coroutines
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

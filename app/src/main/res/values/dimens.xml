@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--card corners radius-->
+    <dimen name="card_corner_radius_small">4dp</dimen>
+    <dimen name="card_corner_radius_normal">8dp</dimen>
+    <dimen name="card_corner_radius_big">16dp</dimen>
+
+    <!--card elevation-->
+    <dimen name="card_elevation_smallest">2dp</dimen>
+    <dimen name="card_elevation_small">4dp</dimen>
+    <dimen name="card_elevation_normal">8dp</dimen>
+
+    <!--text sizes-->
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_small_medium">12sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_medium_large">18sp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
+
+    <!--margins sizes-->
+    <dimen name="margin_smallest">2dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
+    <!--widget sizes-->
+    <dimen name="avatar_size">36dp</dimen>
+    <dimen name="divider_height">0.5dp</dimen>
+    <dimen name="divider_dialog_length">150dp</dimen>
+</resources>

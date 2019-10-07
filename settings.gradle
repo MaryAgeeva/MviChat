@@ -1,0 +1,2 @@
+include ':app', ':mvi_base', ':domain', ':data'
+rootProject.name='MviChat'

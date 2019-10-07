@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.apollographql.android'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def common = rootProject.ext.commonDependencies
+    def test = rootProject.ext.testDependencies
+
+    implementation common.dagger
+    kapt common.daggerAnnotation
+
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation common.coroutines
+
+    implementation common.apollo
+    implementation common.okHttp
+    implementation common.kotlin
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation common.appCompat
+    implementation common.ktx
+
+    kapt common.daggerAnnotation
+
+    testImplementation test.jUnit
+    androidTestImplementation test.testRunner
+    androidTestImplementation test.espresso
+    implementation project(path: ':domain')
+}
+
+if (project.hasProperty('kapt')) {
+    kapt {
+        javacOptions {
+            option("-source", "8")
+            option("-target", "8")
+        }
+    }
+}
