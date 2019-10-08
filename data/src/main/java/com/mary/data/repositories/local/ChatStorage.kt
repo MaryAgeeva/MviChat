@@ -8,7 +8,7 @@ class ChatStorage @Inject constructor() : IChatStorage {
 
     private val messages : MutableList<Message> = mutableListOf()
 
-    override fun addNewMessage(message: Message) {
+    override suspend fun addNewMessage(message: Message) {
         messages.add(message)
     }
 
