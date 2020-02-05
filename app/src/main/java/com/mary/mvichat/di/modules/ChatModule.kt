@@ -1,11 +1,9 @@
 package com.mary.mvichat.di.modules
 
+import androidx.lifecycle.ViewModel
 import com.mary.domain.use_cases.*
 import com.mary.mvichat.di.modules.view_model.ViewModelKey
 import com.mary.mvichat.di.scopes.ChatScope
-import com.mary.mvichat.presentation.base.BaseMviViewStore
-import com.mary.mvichat.presentation.main_chat.ChatIntent
-import com.mary.mvichat.presentation.main_chat.ChatViewState
 import com.mary.mvichat.presentation.main_chat.ChatViewStore
 import dagger.Binds
 import dagger.Module
@@ -17,7 +15,7 @@ interface ChatModule {
     @Binds
     @IntoMap
     @ViewModelKey(ChatViewStore::class)
-    fun provideChatStore(chatViewStore: ChatViewStore) : BaseMviViewStore<ChatIntent, ChatViewState>
+    fun provideChatStore(chatViewStore: ChatViewStore) : ViewModel
 
     @ChatScope
     @Binds

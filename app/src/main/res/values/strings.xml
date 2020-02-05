@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HSChat</string>
+    <string name="app_name">MviChat</string>
     <string name="chat_username">Username</string>
     <string name="chat_message">Message</string>
     <string name="chat_send">Send</string>
