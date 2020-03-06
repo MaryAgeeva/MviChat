@@ -6,6 +6,7 @@ import com.mary.mvichat.presentation.base.BaseMviViewStore
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
+@UseExperimental(kotlinx.coroutines.FlowPreview::class)
 class ChatViewStore @Inject constructor(private val middleware: ChatMiddleware,
                                         private val reducer : ChatReducer): BaseMviViewStore<ChatIntent, ChatViewState>() {
 
